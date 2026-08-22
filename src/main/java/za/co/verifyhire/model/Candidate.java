@@ -1,8 +1,8 @@
 public class Candidate extends User{
 
-    private Qualification qualification;
-    private WorkExperience experience;
-    private Reference reference;
+    private List<Qualification> qualification;
+    private List<WorkExperience> experience;
+    private List<Reference> reference;
 
     public Candidate(String userId, String firstName, String lastName, String email,String password,String location, Qualification qualification, WorkExperience experience,Reference reference) {
         super(userId, firstName, lastName,email,password,location);
