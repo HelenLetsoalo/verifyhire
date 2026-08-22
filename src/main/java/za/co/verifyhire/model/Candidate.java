@@ -1,8 +1,8 @@
 public class Candidate extends User{
 
-    private List<Qualification> qualification;
-    private List<WorkExperience> experience;
-    private List<Reference> reference;
+    private List<Qualification> qualifications;
+    private List<WorkExperience> experiences;
+    private List<Reference> references;
 
     public Candidate(String userId, String firstName, String lastName, String email,String password,String location, Qualification qualification, WorkExperience experience,Reference reference) {
         super(userId, firstName, lastName,email,password,location);
@@ -13,15 +13,15 @@ public class Candidate extends User{
 
     // Getters
 
-    public Qualification getQualification() {
-        return qualification;
+    public List<Qualification> getQualifications() {
+        return qualifications;
     }
 
-    public WorkExperience getExperience() {
-        return experience;
+    public List<WorkExperience> getExperiences() {
+        return experiences;
     }
 
-    public Reference getReference() {
-        return reference;
+    public List<Referenc> getReferences() {
+        return references;
     }
 }
