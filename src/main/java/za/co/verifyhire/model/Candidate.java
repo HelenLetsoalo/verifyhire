@@ -6,9 +6,9 @@ public class Candidate extends User{
 
     public Candidate(String userId, String firstName, String lastName, String email,String password,String location, Qualification qualification, WorkExperience experience,Reference reference) {
         super(userId, firstName, lastName,email,password,location);
-        this.qualification = qualification;
-        this.experience = experience;
-        this.reference = reference;
+        this.qualification = new ArrayList<>();
+        this.experience = new ArrayList<>();
+        this.reference = new ArrayList<>();
     }
 
     // Getters
