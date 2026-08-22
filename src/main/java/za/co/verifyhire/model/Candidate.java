@@ -4,11 +4,11 @@ public class Candidate extends User{
     private List<WorkExperience> experiences;
     private List<Reference> references;
 
-    public Candidate(String userId, String firstName, String lastName, String email,String password,String location, Qualification qualification, WorkExperience experience,Reference reference) {
+    public Candidate(String userId, String firstName, String lastName, String email,String password,String location) {
         super(userId, firstName, lastName,email,password,location);
-        this.qualification = new ArrayList<>();
-        this.experience = new ArrayList<>();
-        this.reference = new ArrayList<>();
+        this.qualifications = new ArrayList<>();
+        this.experiences = new ArrayList<>();
+        this.references = new ArrayList<>();
     }
 
     // Getters
