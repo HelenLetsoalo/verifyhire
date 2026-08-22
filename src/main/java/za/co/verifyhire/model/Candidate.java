@@ -21,7 +21,20 @@ public class Candidate extends User{
         return experiences;
     }
 
-    public List<Referenc> getReferences() {
+    public List<Reference> getReferences() {
         return references;
     }
+
+    public void addQualification(Qualification qualification) {
+        qualifications.add(qualification);
+    }
+
+    public void addWorkExperience(WorkExperience experience){
+        experiences.add(experience);
+    }
+
+    public void addReference(Reference reference){
+        references.add(reference);
+    }
+
 }
