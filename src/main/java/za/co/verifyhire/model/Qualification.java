@@ -11,5 +11,19 @@ public class Qualification {
         this.institutionName = institutionName;
         this.yearObtained = yearObtained;
     }
+    public String getQualificationID() {
+        return qualificationID;
+    }
 
+    public String getInstitutionName(){
+        return institutionName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getYearObtained(){
+        return yearObtained;
+    }
 }
