@@ -13,4 +13,18 @@ public class WorkExperience{
         this.startDate = startDate;
         this.endDate = endDate;
     }
+
+    public String getExperienceId() {
+        return experienceId;
+    }
+
+    public String getCompanyName(){return companyName;}
+
+    public String getJobTitle(){
+        return jobTitle;
+    }
+
+    public LocalDate getStartDate(){return startDate;}
+
+    public LocalDate getEndDate(){return endDate}
 }
