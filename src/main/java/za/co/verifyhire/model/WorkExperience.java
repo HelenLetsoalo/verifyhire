@@ -26,5 +26,5 @@ public class WorkExperience{
 
     public LocalDate getStartDate(){return startDate;}
 
-    public LocalDate getEndDate(){return endDate}
+    public LocalDate getEndDate(){return endDate;}
 }
