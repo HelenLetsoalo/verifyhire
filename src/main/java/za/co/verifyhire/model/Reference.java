@@ -14,5 +14,14 @@ public class Reference {
         this.phoneNumber = phoneNumber;
 
     }
+    public String getReferenceId() {return referenceId;}
+
+    public String getName(){return name;}
+
+    public String getRelationship(){return relationship;}
+
+    public String getEmail(){return email;}
+
+    public String getPhoneNumber(){return phoneNumber;}
 
 }
