@@ -8,7 +8,7 @@ public class Job {
     private JobStatus status;
 
     public enum JobStatus{
-        OPEN
+        OPEN,
         CLOSED
     }
 
