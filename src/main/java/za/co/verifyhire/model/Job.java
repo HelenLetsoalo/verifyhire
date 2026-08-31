@@ -12,5 +12,15 @@ public class Job {
         CLOSED
     }
 
+    public Job(String jobId, String title, String description, String location, String requirements) {
+        this.jobId = jobId;
+        this.title = title;
+        this.description = description;
+        this.location = location;
+        this.requirements = requirements;
+        this.status = JobStatus.OPEN;
+
+    }
+
 
 }
