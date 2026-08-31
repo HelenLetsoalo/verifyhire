@@ -9,4 +9,8 @@ public class Recruiter extends User{
         this.isVerified = false;
     }
 
+    public String getCompanyName(){return companyName;}
+
+    public boolean isVerified(){return isVerified;}
+
 }
