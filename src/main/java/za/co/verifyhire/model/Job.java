@@ -22,5 +22,27 @@ public class Job {
 
     }
 
+    public String getJobId() {
+        return jobId;
+    }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getRequirements() {
+        return requirements;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public JobStatus getStatus() {
+        return status;
+    }
 }
