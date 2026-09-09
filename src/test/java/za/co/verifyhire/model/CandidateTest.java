@@ -33,4 +33,27 @@ public class CandidateTest {
 
         assertEquals(0, candidate.getQualifications().size());
     }
+
+    @Test
+    public void shouldAddQualification() {
+        Candidate candidate = new Candidate(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Qualification qualification = new Qualification(
+                "Q1",
+                "Software Development",
+                "WeThinkCode_",
+                2026
+        );
+
+        candidate.addQualification(qualification);
+
+        assertEquals(1, candidate.getQualifications().size());
+    }
 }
