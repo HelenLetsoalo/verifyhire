@@ -1,3 +1,5 @@
+package za.co.verifyhire.model;
+
 public class Reference {
 
     private String referenceId;

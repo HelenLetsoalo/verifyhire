@@ -1,3 +1,5 @@
+package za.co.verifyhire.model;
+
 public class Recruiter extends User{
 
     private String companyName;

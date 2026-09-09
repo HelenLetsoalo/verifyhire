@@ -1,3 +1,8 @@
+package za.co.verifyhire.model;
+
+import java.util.List;
+import java.util.ArrayList;
+
 public class Candidate extends User{
 
     private List<Qualification> qualifications;

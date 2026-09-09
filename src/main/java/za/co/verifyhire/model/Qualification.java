@@ -1,3 +1,5 @@
+package za.co.verifyhire.model;
+
 public class Qualification {
 
     private String qualificationId;
@@ -11,8 +13,8 @@ public class Qualification {
         this.institutionName = institutionName;
         this.yearObtained = yearObtained;
     }
-    public String getQualificationID() {
-        return qualificationID;
+    public String getQualificationId() {
+        return qualificationId;
     }
 
     public String getInstitutionName(){
