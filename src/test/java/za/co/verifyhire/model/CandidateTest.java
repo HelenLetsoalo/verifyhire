@@ -2,8 +2,9 @@ package za.co.verifyhire.model;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.time.LocalDate;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CandidateTest {
 
@@ -19,6 +20,76 @@ public class CandidateTest {
         );
 
         assertEquals("Helen", candidate.getFirstName());
+    }
+
+    @Test
+    public void shouldReturnUserId() {
+        Candidate candidate = new Candidate(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals("1", candidate.getUserId());
+    }
+
+    @Test
+    public void shouldReturnLastName() {
+        Candidate candidate = new Candidate(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals("Letsoalo", candidate.getLastName());
+    }
+
+    @Test
+    public void shouldReturnEmail() {
+        Candidate candidate = new Candidate(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals("helen@123.com", candidate.getEmail());
+    }
+
+    @Test
+    public void shouldReturnPassword() {
+        Candidate candidate = new Candidate(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals("password", candidate.getPassword());
+    }
+
+    @Test
+    public void shouldReturnLocation() {
+        Candidate candidate = new Candidate(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals("Johannesburg", candidate.getLocation());
     }
 
     @Test
@@ -48,7 +119,7 @@ public class CandidateTest {
 
         Qualification qualification = new Qualification(
                 "Q1",
-                "Software Development",
+                "Software Engineering",
                 "WeThinkCode_",
                 2026
         );
@@ -56,6 +127,7 @@ public class CandidateTest {
         candidate.addQualification(qualification);
 
         assertEquals(1, candidate.getQualifications().size());
+        assertEquals(qualification, candidate.getQualifications().get(0));
     }
 
     @Test
@@ -126,7 +198,8 @@ public class CandidateTest {
                 "R1",
                 "John Smith",
                 "Manager",
-                "john@example.com"
+                "john@example.com",
+                "0111234567"
         );
 
         candidate.addReference(reference);
