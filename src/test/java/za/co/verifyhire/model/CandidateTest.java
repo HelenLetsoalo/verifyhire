@@ -56,4 +56,18 @@ public class CandidateTest {
 
         assertEquals(1, candidate.getQualifications().size());
     }
+
+    @Test
+    public void shouldHaveNoWorkExperienceInitially() {
+        Candidate candidate = new Candidate(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals(0, candidate.getExperiences().size());
+    }
 }
