@@ -34,3 +34,17 @@ public class UserTest {
         assertEquals("1", user.getUserId());
     }
 
+    @Test
+    public void shouldReturnLastName() {
+        User user = new User(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals("Letsoalo", user.getLastName());
+    }
+
