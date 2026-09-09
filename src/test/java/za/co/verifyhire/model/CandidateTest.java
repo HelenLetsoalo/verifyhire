@@ -19,4 +19,18 @@ public class CandidateTest {
 
         assertEquals("Helen", candidate.getFirstName());
     }
+
+    @Test
+    public void shouldHaveNoQualificationsInitially() {
+        Candidate candidate = new Candidate(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals(0, candidate.getQualifications().size());
+    }
 }
