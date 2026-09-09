@@ -21,6 +21,20 @@ public class UserTest {
     }
 
     @Test
+    public void shouldReturnLastName() {
+        User user = new User(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals("Letsoalo", user.getLastName());
+    }
+
+    @Test
     public void shouldReturnUserId() {
         User user = new User(
                 "1",
@@ -34,19 +48,7 @@ public class UserTest {
         assertEquals("1", user.getUserId());
     }
 
-    @Test
-    public void shouldReturnLastName() {
-        User user = new User(
-                "1",
-                "Helen",
-                "Letsoalo",
-                "helen@123.com",
-                "password",
-                "Johannesburg"
-        );
 
-        assertEquals("Letsoalo", user.getLastName());
-    }
 
     @Test
     public void shouldReturnEmail() {
@@ -76,3 +78,17 @@ public class UserTest {
         assertEquals("password", user.getPassword());
     }
 
+    @Test
+    public void shouldReturnLocation() {
+        User user = new User(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals("Johannesburg", user.getLocation());
+    }
+}
