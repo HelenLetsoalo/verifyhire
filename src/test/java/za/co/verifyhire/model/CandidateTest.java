@@ -3,6 +3,7 @@ package za.co.verifyhire.model;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.time.LocalDate;
 
 public class CandidateTest {
 
@@ -94,5 +95,19 @@ public class CandidateTest {
 
         assertEquals(1, candidate.getExperiences().size());
         assertEquals(experience, candidate.getExperiences().get(0));
+    }
+
+    @Test
+    public void shouldHaveNoReferencesInitially() {
+        Candidate candidate = new Candidate(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals(0, candidate.getReferences().size());
     }
 }
