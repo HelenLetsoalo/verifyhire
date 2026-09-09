@@ -19,3 +19,18 @@ public class UserTest {
         assertEquals("Helen", user.getFirstName());
 
     }
+
+    @Test
+    public void shouldReturnUserId() {
+        User user = new User(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals("1", user.getUserId());
+    }
+
