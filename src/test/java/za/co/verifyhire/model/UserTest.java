@@ -19,5 +19,3 @@ public class UserTest {
         assertEquals("Helen", user.getFirstName());
 
     }
-
-}
