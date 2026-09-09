@@ -70,4 +70,29 @@ public class CandidateTest {
 
         assertEquals(0, candidate.getExperiences().size());
     }
+
+    @Test
+    public void shouldAddWorkExperience() {
+        Candidate candidate = new Candidate(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        WorkExperience experience = new WorkExperience(
+                "W1",
+                "ABC Company",
+                "Software Developer",
+                LocalDate.of(2025, 1, 1),
+                LocalDate.of(2025, 6, 30)
+        );
+
+        candidate.addWorkExperience(experience);
+
+        assertEquals(1, candidate.getExperiences().size());
+        assertEquals(experience, candidate.getExperiences().get(0));
+    }
 }
