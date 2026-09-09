@@ -110,4 +110,28 @@ public class CandidateTest {
 
         assertEquals(0, candidate.getReferences().size());
     }
+
+    @Test
+    public void shouldAddReference() {
+        Candidate candidate = new Candidate(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Reference reference = new Reference(
+                "R1",
+                "John Smith",
+                "Manager",
+                "john@example.com"
+        );
+
+        candidate.addReference(reference);
+
+        assertEquals(1, candidate.getReferences().size());
+        assertEquals(reference, candidate.getReferences().get(0));
+    }
 }
