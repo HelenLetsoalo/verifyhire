@@ -48,3 +48,17 @@ public class UserTest {
         assertEquals("Letsoalo", user.getLastName());
     }
 
+    @Test
+    public void shouldReturnEmail() {
+        User user = new User(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg"
+        );
+
+        assertEquals("helen@123.com", user.getEmail());
+    }
+
