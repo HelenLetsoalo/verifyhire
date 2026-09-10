@@ -41,4 +41,15 @@ public class AppealTest {
                 appeal.getReason()
         );
     }
+
+    @Test
+    public void shouldBePendingInitially() {
+        Appeal appeal = new Appeal(
+                "A1",
+                null,
+                "I believe my qualification was incorrectly rejected."
+        );
+
+        assertEquals(Appeal.AppealStatus.PENDING, appeal.getStatus());
+    }
 }
