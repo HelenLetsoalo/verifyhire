@@ -92,4 +92,8 @@ public class JobApplicationTest {
                 JobApplication.ApplicationStatus.valueOf("UNDER_REVIEW")
         );
     }
+    @Test
+    public void shouldHaveAllApplicationStatuses() {
+        assertEquals(4, JobApplication.ApplicationStatus.values().length);
+    }
 }
