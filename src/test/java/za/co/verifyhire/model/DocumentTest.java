@@ -53,4 +53,16 @@ public class DocumentTest {
 
         assertEquals("degree.pdf", document.getFileName());
     }
+
+    @Test
+    public void shouldBePendingInitially() {
+        Document document = new Document(
+                "D1",
+                null,
+                "Qualification Certificate",
+                "degree.pdf"
+        );
+
+        assertEquals(Document.DocumentStatus.PENDING, document.getStatus());
+    }
 }
