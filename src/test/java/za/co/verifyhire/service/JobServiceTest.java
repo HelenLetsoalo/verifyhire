@@ -23,4 +23,13 @@ public class JobServiceTest {
 
         assertEquals(job, service.findJobById("J1"));
     }
+
+    @Test
+    public void shouldReturnNullWhenJobDoesNotExist() {
+        JobService service = new JobService();
+
+        Job foundJob = service.findJobById("J999");
+
+        assertEquals(null, foundJob);
+    }
 }
