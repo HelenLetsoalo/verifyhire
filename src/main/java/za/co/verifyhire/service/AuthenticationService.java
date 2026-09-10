@@ -25,4 +25,14 @@ public class AuthenticationService{
         }
         return null;
     }
+
+    public User authenticateUser(String email, String password) {
+        User user = findByEmail(email);
+
+        if(user != null && user.getPassword().equals(password)){
+            return user;
+        }
+        return null;
+    }
+
 }
