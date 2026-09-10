@@ -24,4 +24,24 @@ public class JobApplication{
         this.applicationDate = LocalDate.now();
         this.status = ApplicationStatus.PENDING;
     }
+
+    public String getApplicationId() {
+        return applicationId;
+    }
+
+    public Candidate getCandidate() {
+        return candidate;
+    }
+
+    public Job getJob() {
+        return job;
+    }
+
+    public LocalDate getApplicationDate() {
+        return applicationDate;
+    }
+
+    public ApplicationStatus getStatus() {
+        return status;
+    }
 }
