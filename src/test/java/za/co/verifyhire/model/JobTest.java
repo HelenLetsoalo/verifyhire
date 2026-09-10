@@ -69,4 +69,17 @@ public class JobTest {
         assertEquals("Java, Git, Maven", job.getRequirements());
     }
 
+    @Test
+    public void shouldBeOpenInitially() {
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop and maintain software applications",
+                "Johannesburg",
+                "Java, Git, Maven"
+        );
+
+        assertEquals(Job.JobStatus.OPEN, job.getStatus());
+    }
+
 }
