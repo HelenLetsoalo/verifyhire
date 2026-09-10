@@ -7,4 +7,9 @@ public class Appeal {
     private String reason;
     private AppealStatus status;
 
+    public enum AppealStatus {
+        PENDING,
+        APPROVED,
+        REJECTED
+    }
 }
