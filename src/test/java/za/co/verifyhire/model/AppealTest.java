@@ -16,4 +16,17 @@ public class AppealTest {
 
         assertEquals("A1", appeal.getAppealId());
     }
+
+    @Test
+    public void shouldReturnApplication() {
+        Appeal appeal = new Appeal(
+                "A1",
+                null,
+                "I believe my qualification was incorrectly rejected."
+        );
+
+        assertEquals(null, appeal.getApplication());
+    }
+
+
 }
