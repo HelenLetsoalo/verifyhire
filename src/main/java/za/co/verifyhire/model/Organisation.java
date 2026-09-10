@@ -18,4 +18,27 @@ public class Organisation {
         this.phone = phone;
     }
 
+    public String getOrganisationId() {
+        return organisationId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getServices() {
+        return services;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
 }
