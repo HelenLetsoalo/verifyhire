@@ -14,4 +14,12 @@ public class Document {
         REJECTED
     }
 
+    public Document(String documentId, Candidate candidate,String documentType, String fileName) {
+        this.documentId = documentId;
+        this.candidate = candidate;
+        this.documentType = documentType;
+        this.fileName = fileName;
+        this.status = DocumentStatus.PENDING;
+    }
+
 }
