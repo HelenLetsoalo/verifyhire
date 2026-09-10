@@ -52,4 +52,9 @@ public class AppealTest {
 
         assertEquals(Appeal.AppealStatus.PENDING, appeal.getStatus());
     }
+
+    @Test
+    public void shouldHaveAllAppealStatuses() {
+        assertEquals(3, Appeal.AppealStatus.values().length);
+    }
 }
