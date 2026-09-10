@@ -30,6 +30,17 @@ public class JobTest {
         assertEquals("Software Developer", job.getTitle());
     }
 
+    @Test
+    public void shouldReturnDescription() {
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop and maintain software applications",
+                "Johannesburg",
+                "Java, Git, Maven"
+        );
 
+        assertEquals("Develop and maintain software applications", job.getDescription());
+    }
 
 }
