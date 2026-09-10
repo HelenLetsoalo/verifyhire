@@ -65,5 +65,23 @@ public class JobApplicationTest {
         assertEquals(job, application.getJob());
     }
 
+    @Test
+    public void shouldBePendingInitially() {
+        Candidate candidate = new Candidate(
+                "C1", "Helen", "Letsoalo",
+                "helen@123.com", "password", "Johannesburg"
+        );
 
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software",
+                "Johannesburg",
+                "Java, Git, Maven"
+        );
+
+        JobApplication application = new JobApplication("A1", candidate, job);
+
+        assertEquals(JobApplication.ApplicationStatus.PENDING, application.getStatus());
+    }
 }
