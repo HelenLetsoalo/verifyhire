@@ -8,17 +8,19 @@ public class JobServiceTest {
 
     @Test
     public void shouldAddJob(){
-        JobService service = new JobService;
+        JobService service = new JobService();
 
         Job job = new Job(
                 "J1",
                 "Software Developer",
                 "Develop and maintain software.",
                 "Johannesburg",
-                "Java, Python
+                "Java, Python"
+
         );
+
         service.addJob(job);
 
-        assertEquals(job, service.findJobById());
+        assertEquals(job, service.findJobById("J1"));
     }
 }
