@@ -28,4 +28,16 @@ public class VerificationReportTest {
 
         assertEquals(null, report.getApplication());
     }
+
+    @Test
+    public void shouldReturnVerifiedStatus() {
+        VerificationReport report = new VerificationReport(
+                "VR1",
+                null,
+                true,
+                "All requirements verified."
+        );
+
+        assertEquals(true, report.isVerified());
+    }
 }
