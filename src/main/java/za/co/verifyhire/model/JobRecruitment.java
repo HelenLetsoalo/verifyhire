@@ -7,4 +7,8 @@ public class JobRecruitment {
     private Organisation organisation;
     private RecruitmentStatus status;
 
+    public enum RecruitmentStatus {
+        OPEN,
+        CLOSED
+    }
 }
