@@ -43,4 +43,25 @@ public class AuthenticationServiceTest {
 
         assertEquals(user, foundUser);
     }
+
+    @Test
+    public void shouldAuthenticateUserWithCorrectCredentials() {
+        AuthenticationService service = new AuthenticationService();
+
+        User user = new User(
+                "U1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        service.registerUser(user);
+
+        User authenticatedUser =
+                service.authenticate("helen@example.com", "password");
+
+        assertEquals(user, authenticatedUser);
+    }
 }
