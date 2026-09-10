@@ -12,4 +12,17 @@ public class CandidateService {
     public CandidateService() {
         this.candidates = new ArrayList<>();
     }
+
+    public void addCandidate(Candidate candidate) {
+        candidates.add(candidate);
+    }
+
+    public Candidate findCandidateById(String UserId){
+        for(Candidate candidate : candidates) {
+            if(candidate.getUserId().equals(UserId)){
+                return candidate;
+            }
+        }
+        return null;
+    }
 }
