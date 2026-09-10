@@ -10,4 +10,10 @@ public class JobApplication{
     private LocalDate applicationDate;
     private ApplicationStatus status;
 
+    public enum ApplicationStatus {
+        PENDING,
+        UNDER_REVIEW,
+        ACCEPTED,
+        REJECTED
+    }
 }
