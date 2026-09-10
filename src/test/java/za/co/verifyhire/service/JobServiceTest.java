@@ -32,4 +32,32 @@ public class JobServiceTest {
 
         assertEquals(null, foundJob);
     }
+
+    @Test
+    public void shouldFindCorrectJobById() {
+        JobService service = new JobService();
+
+        Job firstJob = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software.",
+                "Johannesburg",
+                "Java"
+        );
+
+        Job secondJob = new Job(
+                "J2",
+                "Data Analyst",
+                "Analyse company data.",
+                "Pretoria",
+                "Python, SQL"
+        );
+
+        service.addJob(firstJob);
+        service.addJob(secondJob);
+
+        Job foundJob = service.findJobById("J2");
+
+        assertEquals(secondJob, foundJob);
+    }
 }
