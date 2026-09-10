@@ -41,4 +41,18 @@ public class QualificationTest {
 
         assertEquals("WeThinkCode_", qualification.getInstitutionName());
     }
+
+    @Test
+    public void shouldReturnYearObtained() {
+        Qualification qualification = new Qualification(
+                "Q1",
+                "Software Development",
+                "WeThinkCode_",
+                2026
+        );
+
+        assertEquals(2026,qualification.getYearObtained());
+    }
+
+
 }
