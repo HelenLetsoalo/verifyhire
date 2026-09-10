@@ -6,5 +6,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class OrganisationTest {
 
+    @Test
+    public void shouldReturnOrganisationId() {
+        Organisation organisation = new Organisation(
+                "O1",
+                "ABC Company",
+                "Johannesburg",
+                "info@abc.com",
+                "Software Development",
+                "0111234567"
+        );
 
+        assertEquals("O1", organisation.getOrganisationId());
+    }
 }
