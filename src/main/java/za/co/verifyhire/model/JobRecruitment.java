@@ -11,4 +11,12 @@ public class JobRecruitment {
         OPEN,
         CLOSED
     }
+
+    public JobRecruitment(String recruitmentId, Job job, Organisation organisation) {
+        this.recruitmentId = recruitmentId;
+        this.job = job;
+        this.organisation = organisation;
+        this.status = RecruitmentStatus.OPEN;
+    }
+
 }
