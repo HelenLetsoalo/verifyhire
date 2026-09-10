@@ -15,4 +15,15 @@ public class JobRecruitmentTest {
 
         assertEquals("JR1", recruitment.getRecruitmentId());
     }
+
+    @Test
+    public void shouldReturnJob() {
+        JobRecruitment recruitment = new JobRecruitment(
+                "JR1",
+                null,
+                null
+        );
+
+        assertEquals(null, recruitment.getJob());
+    }
 }
