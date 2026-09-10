@@ -43,4 +43,6 @@ public class JobApplicationTest {
 
         assertEquals(candidate, application.getCandidate());
     }
+
+        
 }
