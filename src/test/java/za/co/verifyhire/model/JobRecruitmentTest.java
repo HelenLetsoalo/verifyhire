@@ -52,4 +52,12 @@ public class JobRecruitmentTest {
         );
     }
 
+    @Test
+    public void shouldHaveAllRecruitmentStatuses() {
+        assertEquals(
+                2,
+                JobRecruitment.RecruitmentStatus.values().length
+        );
+    }
+
 }
