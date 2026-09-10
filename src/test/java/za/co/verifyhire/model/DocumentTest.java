@@ -65,4 +65,9 @@ public class DocumentTest {
 
         assertEquals(Document.DocumentStatus.PENDING, document.getStatus());
     }
+
+    @Test
+    public void shouldHaveAllDocumentStatuses() {
+        assertEquals(3, Document.DocumentStatus.values().length);
+    }
 }
