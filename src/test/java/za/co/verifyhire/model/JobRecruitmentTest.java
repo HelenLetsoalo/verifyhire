@@ -37,6 +37,7 @@ public class JobRecruitmentTest {
 
         assertEquals(null, recruitment.getOrganisation());
     }
+    
 
 
 }
