@@ -47,4 +47,18 @@ public class OrganisationTest {
 
         assertEquals("Johannesburg", organisation.getLocation());
     }
+
+    @Test
+    public void shouldReturnEmail() {
+        Organisation organisation = new Organisation(
+                "O1",
+                "ABC Company",
+                "Johannesburg",
+                "info@abc.com",
+                "Software Development",
+                "0111234567"
+        );
+
+        assertEquals("info@abc.com", organisation.getEmail());
+    }
 }
