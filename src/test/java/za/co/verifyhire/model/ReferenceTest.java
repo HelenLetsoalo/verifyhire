@@ -44,6 +44,17 @@ public class ReferenceTest {
         assertEquals("Manager", reference.getRelationship());
     }
 
+    @Test
+    public void shouldReturnEmail() {
+        Reference reference = new Reference(
+                "R1",
+                "John Smith",
+                "Manager",
+                "john@example.com",
+                "0111234567"
+        );
 
+        assertEquals("john@example.com", reference.getEmail());
+    }
 }
 
