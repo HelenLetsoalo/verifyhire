@@ -31,4 +31,34 @@ public class CandidateServiceTest {
 
         assertEquals(null, foundCandidate);
     }
+
+    @Test
+    public void shouldFindCorrectCandidateById() {
+        CandidateService service = new CandidateService();
+
+        Candidate firstCandidate = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Candidate secondCandidate = new Candidate(
+                "C2",
+                "John",
+                "Doe",
+                "john@example.com",
+                "password",
+                "Pretoria"
+        );
+
+        service.addCandidate(firstCandidate);
+        service.addCandidate(secondCandidate);
+
+        Candidate foundCandidate = service.findCandidateById("C2");
+
+        assertEquals(secondCandidate, foundCandidate);
+    }
 }
