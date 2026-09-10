@@ -28,5 +28,17 @@ public class AppealTest {
         assertEquals(null, appeal.getApplication());
     }
 
+    @Test
+    public void shouldReturnReason() {
+        Appeal appeal = new Appeal(
+                "A1",
+                null,
+                "I believe my qualification was incorrectly rejected."
+        );
 
+        assertEquals(
+                "I believe my qualification was incorrectly rejected.",
+                appeal.getReason()
+        );
+    }
 }
