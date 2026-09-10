@@ -12,4 +12,11 @@ public class Appeal {
         APPROVED,
         REJECTED
     }
+
+    public Appeal(String appealId, JobApplication application, String reason) {
+        this.appealId = appealId;
+        this.application = application;
+        this.reason = reason;
+        this.status = AppealStatus.PENDING;
+    }
 }
