@@ -40,4 +40,16 @@ public class VerificationReportTest {
 
         assertEquals(true, report.isVerified());
     }
+
+    @Test
+    public void shouldReturnReason() {
+        VerificationReport report = new VerificationReport(
+                "VR1",
+                null,
+                true,
+                "All requirements verified."
+        );
+
+        assertEquals("All requirements verified.", report.getReason());
+    }
 }
