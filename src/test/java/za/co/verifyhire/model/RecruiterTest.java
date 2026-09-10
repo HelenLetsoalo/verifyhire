@@ -51,7 +51,20 @@ public class RecruiterTest {
         assertEquals("Letsoalo", recruiter.getLastName());
     }
 
+    @Test
+    public void shouldReturnEmail() {
+        Recruiter recruiter = new Recruiter(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg",
+                "ABC Company"
+        );
 
+        assertEquals("helen@123.com", recruiter.getEmail());
+    }
 }
 
 
