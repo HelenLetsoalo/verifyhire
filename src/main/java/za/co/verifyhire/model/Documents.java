@@ -8,4 +8,10 @@ public class Document {
 
     }
 
+    public enum DocumentStatus {
+        PENDING,
+        VERIFIED,
+        REJECTED
+    }
+
 }
