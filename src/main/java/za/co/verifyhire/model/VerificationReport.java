@@ -12,4 +12,11 @@ public class VerificationReport {
         FAILED,
         PENDING
     }
+
+    public VerificationReport(String reportId,JobApplication application,VerificationResult result,String reason) {
+        this.reportId = reportId;
+        this.application = application;
+        this.result = result;
+        this.reason = reason;
+    }
 }
