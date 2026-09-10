@@ -31,5 +31,16 @@ public class WorkExperienceTest {
         assertEquals("ABC Company", experience.getCompanyName());
     }
 
+    @Test
+    public void shouldReturnJobTitle() {
+        WorkExperience experience = new WorkExperience(
+                "W1",
+                "ABC Company",
+                "Software Developer",
+                LocalDate.of(2025, 1, 1),
+                LocalDate.of(2025, 6, 30)
+        );
 
+        assertEquals("Software Developer", experience.getJobTitle());
+    }
 }
