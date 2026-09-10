@@ -47,4 +47,8 @@ public class Job {
     public JobStatus getStatus() {
         return status;
     }
+
+    public void closeJob() {
+        this.status = JobStatus.CLOSED;
+    }
 }
