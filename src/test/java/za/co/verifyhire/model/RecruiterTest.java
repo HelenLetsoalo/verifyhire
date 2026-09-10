@@ -21,6 +21,22 @@ public class RecruiterTest {
         assertEquals("1", recruiter.getUserId());
     }
 
+    @Test
+    public void shouldReturnFirstName() {
+        Recruiter recruiter = new Recruiter(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg",
+                "ABC Company"
+        );
+
+        assertEquals("Helen", recruiter.getFirstName());
+    }
+
+
 
 }
 
