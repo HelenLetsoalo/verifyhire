@@ -19,4 +19,20 @@ public class OrganisationTest {
 
         assertEquals("O1", organisation.getOrganisationId());
     }
+
+    @Test
+    public void shouldReturnName() {
+        Organisation organisation = new Organisation(
+                "O1",
+                "ABC Company",
+                "Johannesburg",
+                "info@abc.com",
+                "Software Development",
+                "0111234567"
+        );
+
+        assertEquals("ABC Company", organisation.getName());
+    }
+
+
 }
