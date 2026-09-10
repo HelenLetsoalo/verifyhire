@@ -16,4 +16,12 @@ public class JobApplication{
         ACCEPTED,
         REJECTED
     }
+
+    public JobApplication(String applicationId, Candidate candidate, Job job) {
+        this.applicationId = applicationId;
+        this.candidate = candidate;
+        this.job = job;
+        this.applicationDate = LocalDate.now();
+        this.status = ApplicationStatus.PENDING;
+    }
 }
