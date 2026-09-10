@@ -17,4 +17,16 @@ public class QualificationTest {
 
         assertEquals("Q1", qualification.getQualificationId());
     }
+
+    @Test
+    public void shouldReturnName() {
+        Qualification qualification = new Qualification(
+                "Q1",
+                "Software Development",
+                "WeThinkCode_",
+                2026
+        );
+
+        assertEquals("Software Development", qualification.getName());
+    }
 }
