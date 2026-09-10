@@ -23,4 +23,24 @@ public class AuthenticationServiceTest {
 
         assertEquals(user, service.findByEmail("helen@example.com"));
     }
+
+    @Test
+    public void shouldFindUserByEmail() {
+        AuthenticationService service = new AuthenticationService();
+
+        User user = new User(
+                "U1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        service.registerUser(user);
+
+        User foundUser = service.findByEmail("helen@example.com");
+
+        assertEquals(user, foundUser);
+    }
 }
