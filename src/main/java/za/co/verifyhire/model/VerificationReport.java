@@ -6,4 +6,10 @@ public class VerificationReport {
     private JobApplication application;
     private VerificationResult result;
     private String reason;
+
+    public enum VerificationResult {
+        VERIFIED,
+        FAILED,
+        PENDING
+    }
 }
