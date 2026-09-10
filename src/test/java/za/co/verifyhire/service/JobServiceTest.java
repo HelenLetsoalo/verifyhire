@@ -87,5 +87,34 @@ public class JobServiceTest {
         assertEquals(2, service.findOpenJobs().size());
     }
 
+    @Test
+    public void shouldExcludeClosedJobs() {
+        JobService service = new JobService();
+
+        Job openJob = new Job(
+                "J001",
+                "Java Developer",
+                "Java development",
+                "Johannesburg",
+                "Java"
+        );
+
+        Job closedJob = new Job(
+                "J002",
+                "Python Developer",
+                "Python development",
+                "Pretoria",
+                "Python"
+        );
+
+        closedJob.closeJob();
+
+        service.addJob(openJob);
+        service.addJob(closedJob);
+
+        assertEquals(1, service.findOpenJobs().size());
+        assertEquals(openJob, service.findOpenJobs().get(0));
+    }
+
 
 }
