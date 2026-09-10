@@ -26,4 +26,17 @@ public class JobRecruitmentTest {
 
         assertEquals(null, recruitment.getJob());
     }
+
+    @Test
+    public void shouldReturnOrganisation() {
+        JobRecruitment recruitment = new JobRecruitment(
+                "JR1",
+                null,
+                null
+        );
+
+        assertEquals(null, recruitment.getOrganisation());
+    }
+
+
 }
