@@ -17,6 +17,19 @@ public class JobTest {
         assertEquals("J1", job.getJobId());
     }
 
+    @Test
+    public void shouldReturnTitle() {
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop and maintain software applications",
+                "Johannesburg",
+                "Java, Git, Maven"
+        );
+
+        assertEquals("Software Developer", job.getTitle());
+    }
+
 
 
 }
