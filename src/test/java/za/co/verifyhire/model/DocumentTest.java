@@ -29,4 +29,16 @@ public class DocumentTest {
 
         assertEquals(null, document.getCandidate());
     }
+
+    @Test
+    public void shouldReturnDocumentType() {
+        Document document = new Document(
+                "D1",
+                null,
+                "Qualification Certificate",
+                "degree.pdf"
+        );
+
+        assertEquals("Qualification Certificate", document.getDocumentType());
+    }
 }
