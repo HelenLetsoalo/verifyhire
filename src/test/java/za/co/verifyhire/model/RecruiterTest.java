@@ -110,6 +110,21 @@ public class RecruiterTest {
 
         assertEquals("ABC Company", recruiter.getCompanyName());
     }
+
+    @Test
+    public void shouldNotBeVerifiedInitially() {
+        Recruiter recruiter = new Recruiter(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg",
+                "ABC Company"
+        );
+
+        assertEquals(false, recruiter.isVerified());
+    }
 }
 
 
