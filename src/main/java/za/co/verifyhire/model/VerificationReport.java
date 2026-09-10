@@ -19,4 +19,20 @@ public class VerificationReport {
         this.result = result;
         this.reason = reason;
     }
+
+    public String getReportId() {
+        return reportId;
+    }
+
+    public JobApplication getApplication() {
+        return application;
+    }
+
+    public VerificationResult getResult() {
+        return result;
+    }
+
+    public String getReason() {
+        return reason;
+    }
 }
