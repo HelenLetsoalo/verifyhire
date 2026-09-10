@@ -17,4 +17,16 @@ public class DocumentTest {
 
         assertEquals("D1", document.getDocumentId());
     }
+
+    @Test
+    public void shouldReturnCandidate() {
+        Document document = new Document(
+                "D1",
+                null,
+                "Qualification Certificate",
+                "degree.pdf"
+        );
+
+        assertEquals(null, document.getCandidate());
+    }
 }
