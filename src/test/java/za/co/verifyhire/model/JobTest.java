@@ -56,4 +56,17 @@ public class JobTest {
         assertEquals("Johannesburg", job.getLocation());
     }
 
+    @Test
+    public void shouldReturnRequirements() {
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop and maintain software applications",
+                "Johannesburg",
+                "Java, Git, Maven"
+        );
+
+        assertEquals("Java, Git, Maven", job.getRequirements());
+    }
+
 }
