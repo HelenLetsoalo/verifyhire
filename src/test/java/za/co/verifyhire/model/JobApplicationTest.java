@@ -84,4 +84,12 @@ public class JobApplicationTest {
 
         assertEquals(JobApplication.ApplicationStatus.PENDING, application.getStatus());
     }
+
+    @Test
+    public void shouldHaveUnderReviewStatus() {
+        assertEquals(
+                JobApplication.ApplicationStatus.UNDER_REVIEW,
+                JobApplication.ApplicationStatus.valueOf("UNDER_REVIEW")
+        );
+    }
 }
