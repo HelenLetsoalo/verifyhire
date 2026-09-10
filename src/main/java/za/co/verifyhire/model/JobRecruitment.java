@@ -19,4 +19,20 @@ public class JobRecruitment {
         this.status = RecruitmentStatus.OPEN;
     }
 
+    public String getRecruitmentId() {
+        return recruitmentId;
+    }
+
+    public Job getJob() {
+        return job;
+    }
+
+    public Organisation getOrganisation() {
+        return organisation;
+    }
+
+    public RecruitmentStatus getStatus() {
+        return status;
+    }
+
 }
