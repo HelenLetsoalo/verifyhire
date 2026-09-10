@@ -29,4 +29,16 @@ public class QualificationTest {
 
         assertEquals("Software Development", qualification.getName());
     }
+
+    @Test
+    public void shouldReturnInstitutionName() {
+        Qualification qualification = new Qualification(
+                "Q1",
+                "Software Development",
+                "WeThinkCode_",
+                2026
+        );
+
+        assertEquals("WeThinkCode_", qualification.getInstitutionName());
+    }
 }
