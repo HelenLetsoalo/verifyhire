@@ -37,7 +37,19 @@ public class JobRecruitmentTest {
 
         assertEquals(null, recruitment.getOrganisation());
     }
-    
 
+    @Test
+    public void shouldBeOpenInitially() {
+        JobRecruitment recruitment = new JobRecruitment(
+                "JR1",
+                null,
+                null
+        );
+
+        assertEquals(
+                JobRecruitment.RecruitmentStatus.OPEN,
+                recruitment.getStatus()
+        );
+    }
 
 }
