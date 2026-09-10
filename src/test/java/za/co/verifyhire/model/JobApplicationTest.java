@@ -23,4 +23,24 @@ public class JobApplicationTest {
 
         assertEquals("A1", application.getApplicationId());
     }
+
+    @Test
+    public void shouldReturnCandidate() {
+        Candidate candidate = new Candidate(
+                "C1", "Helen", "Letsoalo",
+                "helen@123.com", "password", "Johannesburg"
+        );
+
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software",
+                "Johannesburg",
+                "Java, Git, Maven"
+        );
+
+        JobApplication application = new JobApplication("A1", candidate, job);
+
+        assertEquals(candidate, application.getCandidate());
+    }
 }
