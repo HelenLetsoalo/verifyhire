@@ -19,4 +19,20 @@ public class Appeal {
         this.reason = reason;
         this.status = AppealStatus.PENDING;
     }
+
+    public String getAppealId() {
+        return appealId;
+    }
+
+    public JobApplication getApplication() {
+        return application;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public AppealStatus getStatus() {
+        return status;
+    }
 }
