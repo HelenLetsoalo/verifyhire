@@ -5,4 +5,11 @@ import java.util.List;
 
 import za.co.verifyhire.model.Candidate;
 
-public class CandidateService {}
+public class CandidateService {
+
+    private List<Candidate> candidates;
+
+    public CandidateService() {
+        this.candidates = new ArrayList<>();
+    }
+}
