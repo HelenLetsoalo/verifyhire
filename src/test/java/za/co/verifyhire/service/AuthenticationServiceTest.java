@@ -60,8 +60,29 @@ public class AuthenticationServiceTest {
         service.registerUser(user);
 
         User authenticatedUser =
-                service.authenticate("helen@example.com", "password");
+                service.authenticateUser("helen@example.com", "password");
 
         assertEquals(user, authenticatedUser);
+    }
+
+    @Test
+    public void shouldNotAuthenticateUserWithIncorrectPassword() {
+        AuthenticationService service = new AuthenticationService();
+
+        User user = new User(
+                "U1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        service.registerUser(user);
+
+        User authenticatedUser =
+                service.authenticateUser("helen@example.com", "wrongpassword");
+
+        assertEquals(null, authenticatedUser);
     }
 }
