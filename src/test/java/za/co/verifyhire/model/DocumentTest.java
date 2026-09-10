@@ -41,4 +41,16 @@ public class DocumentTest {
 
         assertEquals("Qualification Certificate", document.getDocumentType());
     }
+
+    @Test
+    public void shouldReturnFileName() {
+        Document document = new Document(
+                "D1",
+                null,
+                "Qualification Certificate",
+                "degree.pdf"
+        );
+
+        assertEquals("degree.pdf", document.getFileName());
+    }
 }
