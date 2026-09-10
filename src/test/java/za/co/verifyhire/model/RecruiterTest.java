@@ -81,6 +81,35 @@ public class RecruiterTest {
         assertEquals("helen@123.com", recruiter.getEmail());
     }
 
+    @Test
+    public void shouldReturnLocation() {
+        Recruiter recruiter = new Recruiter(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg",
+                "ABC Company"
+        );
+
+        assertEquals("Johannesburg", recruiter.getLocation());
+    }
+
+    @Test
+    public void shouldReturnCompanyName() {
+        Recruiter recruiter = new Recruiter(
+                "1",
+                "Helen",
+                "Letsoalo",
+                "helen@123.com",
+                "password",
+                "Johannesburg",
+                "ABC Company"
+        );
+
+        assertEquals("ABC Company", recruiter.getCompanyName());
+    }
 }
 
 
