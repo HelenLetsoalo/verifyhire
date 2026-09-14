@@ -44,4 +44,9 @@ public class JobApplication{
     public ApplicationStatus getStatus() {
         return status;
     }
+
+    public void updateStatus(ApplicationStatus status) {
+        this.status = status;
+    }
+
 }
