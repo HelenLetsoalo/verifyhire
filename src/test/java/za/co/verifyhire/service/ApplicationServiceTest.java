@@ -180,12 +180,41 @@ public class ApplicationServiceTest {
     }
 
     @Test
-    public void shouldReturnNullWhenApplicationDoesNotExist() {
+    public void shouldFindApplicationsByJob() {
         ApplicationService service = new ApplicationService();
 
-        JobApplication application =
-                service.findApplicationById("A999");
+        Candidate candidate1 = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
 
-        assertEquals(null, application);
+        Candidate candidate2 = new Candidate(
+                "C2",
+                "John",
+                "Doe",
+                "john@example.com",
+                "password",
+                "Pretoria"
+        );
+
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software.",
+                "Johannesburg",
+                "Java"
+        );
+
+        service.createApplication("A1", candidate1, job);
+        service.createApplication("A2", candidate2, job);
+
+        List<JobApplication> applications =
+                service.findApplicationsByJob(job);
+
+        assertEquals(2, applications.size());
     }
 }
