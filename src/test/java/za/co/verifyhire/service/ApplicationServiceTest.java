@@ -202,4 +202,14 @@ public class ApplicationServiceTest {
                 application.getStatus()
         );
     }
+
+    @Test
+    public void shouldReturnNullWhenApplicationDoesNotExist() {
+        ApplicationService service = new ApplicationService();
+
+        JobApplication application =
+                service.findApplicationById("A999");
+
+        assertEquals(null, application);
+    }
 }
