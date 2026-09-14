@@ -37,4 +37,16 @@ public class ApplicationService {
 
         return null;
     }
+
+    public List<JobApplication> findApplicationsByCandidate(Candidate candidate) {
+        List<JobApplication> candidateApplications = new ArrayList<>();
+
+        for (JobApplication application : applications) {
+            if (application.getCandidate().equals(candidate)) {
+                candidateApplications.add(application);
+            }
+        }
+
+        return candidateApplications;
+    }
 }
