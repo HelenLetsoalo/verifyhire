@@ -1,9 +1,5 @@
 package za.co.verifyhire.service;
 
-import org.junit.jupiter.api.Test;
+public class ApplicationService {
 
-import za.co.verifyhire.model.Candidate;
-import za.co.verifyhire.model.Job;
-import za.co.verifyhire.model.JobApplication;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+}
