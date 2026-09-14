@@ -74,4 +74,42 @@ public class ApplicationServiceTest {
 
         assertEquals(application, foundApplication);
     }
+
+    @Test
+    public void shouldFindApplicationsByCandidate() {
+        ApplicationService service = new ApplicationService();
+
+        Candidate candidate = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Job job1 = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software.",
+                "Johannesburg",
+                "Java"
+        );
+
+        Job job2 = new Job(
+                "J2",
+                "Python Developer",
+                "Develop Python applications.",
+                "Pretoria",
+                "Python"
+        );
+
+        service.createApplication("A1", candidate, job1);
+        service.createApplication("A2", candidate, job2);
+
+        List<JobApplication> applications =
+                service.findApplicationsByCandidate(candidate);
+
+        assertEquals(2, applications.size());
+    }
 }
