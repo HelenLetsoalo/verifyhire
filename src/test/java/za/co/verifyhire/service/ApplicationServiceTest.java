@@ -112,4 +112,23 @@ public class ApplicationServiceTest {
 
         assertEquals(2, applications.size());
     }
+
+    @Test
+    public void shouldReturnEmptyListWhenCandidateHasNoApplications() {
+        ApplicationService service = new ApplicationService();
+
+        Candidate candidate = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        List<JobApplication> applications =
+                service.findApplicationsByCandidate(candidate);
+
+        assertEquals(0, applications.size());
+    }
 }
