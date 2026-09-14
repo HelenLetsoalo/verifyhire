@@ -167,4 +167,39 @@ public class ApplicationServiceTest {
                 application.getStatus()
         );
     }
+
+    @Test
+    public void shouldUpdateApplicationStatus() {
+        ApplicationService service = new ApplicationService();
+
+        Candidate candidate = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software.",
+                "Johannesburg",
+                "Java"
+        );
+
+        JobApplication application =
+                service.createApplication("A1", candidate, job);
+
+        service.updateApplicationStatus(
+                application,
+                JobApplication.ApplicationStatus.UNDER_REVIEW
+        );
+
+        assertEquals(
+                JobApplication.ApplicationStatus.UNDER_REVIEW,
+                application.getStatus()
+        );
+    }
 }
