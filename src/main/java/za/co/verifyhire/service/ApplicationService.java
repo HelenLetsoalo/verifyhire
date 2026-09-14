@@ -49,4 +49,23 @@ public class ApplicationService {
 
         return candidateApplications;
     }
+
+    public void updateApplicationStatus(
+            JobApplication application,
+            JobApplication.ApplicationStatus status) {
+
+        application.updateStatus(status);
+    }
+
+    public List<JobApplication> findApplicationsByJob(Job job) {
+        List<JobApplication> jobApplications = new ArrayList<>();
+
+        for (JobApplication application : applications) {
+            if (application.getJob().equals(job)) {
+                jobApplications.add(application);
+            }
+        }
+
+        return jobApplications;
+    }
 }
