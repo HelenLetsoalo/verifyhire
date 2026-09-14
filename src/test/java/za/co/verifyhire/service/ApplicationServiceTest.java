@@ -42,4 +42,36 @@ public class ApplicationServiceTest {
         assertEquals(candidate, application.getCandidate());
         assertEquals(job, application.getJob());
     }
+
+    @Test
+    public void shouldFindApplicationById() {
+        ApplicationService service = new ApplicationService();
+
+        Candidate candidate = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software.",
+                "Johannesburg",
+                "Java"
+        );
+
+        JobApplication application = service.createApplication(
+                "A1",
+                candidate,
+                job
+        );
+
+        JobApplication foundApplication = service.findApplicationById("A1");
+
+        assertEquals(application, foundApplication);
+    }
 }
