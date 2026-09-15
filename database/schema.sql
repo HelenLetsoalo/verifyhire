@@ -31,3 +31,13 @@ CREATE TABLE work_experience (
     FOREIGN KEY (user_id) REFERENCES candidates(user_id)
 );
 
+CREATE TABLE candidate_references (
+    reference_id VARCHAR(50) PRIMARY KEY,
+    name VARCHAR(100) NOT NULL ,
+    relationship VARCHAR(100) NOT NULL ,
+    email VARCHAR(255) NOT NULL ,
+    phone_number VARCHAR(50) NOT NULL ,
+    user_id VARCHAR(50) NOT NULL ,
+    FOREIGN KEY (user_id) REFERENCES candidates(user_id)
+);
+
