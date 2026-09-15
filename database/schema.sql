@@ -72,3 +72,12 @@ CREATE TABLE job_applications (
 
 );
 
+CREATE TABLE documents (
+    document_id VARCHAR(50) PRIMARY KEY ,
+    candidate_id VARCHAR(50) NOT NULL ,
+    document_type VARCHAR(50) NOT NULL ,
+    file_name VARCHAR(255) NOT NULL ,
+    status VARCHAR(50) NOT NULL ,
+    FOREIGN KEY (candidate_id) REFERENCES candidates(user_id)
+);
+
