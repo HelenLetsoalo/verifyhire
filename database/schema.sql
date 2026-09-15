@@ -81,3 +81,12 @@ CREATE TABLE documents (
     FOREIGN KEY (candidate_id) REFERENCES candidates(user_id)
 );
 
+CREATE TABLE verification_reports (
+    report_id VARCHAR(50) PRIMARY KEY ,
+    verified BOOLEAN NOT NULL ,
+    reason VARCHAR(100) NOT NULL ,
+    application_id VARCHAR(50) NOT NULL ,
+    FOREIGN KEY (application_id) REFERENCES job_applications(application_id)
+
+);
+
