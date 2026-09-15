@@ -458,5 +458,43 @@ public class ApplicationServiceTest {
         );
     }
 
+    @Test
+    public void shouldUpdateApplicationFromUnderReviewToAccepted() {
+        ApplicationService service = new ApplicationService();
 
+        Candidate candidate = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software.",
+                "Johannesburg",
+                "Java"
+        );
+
+        JobApplication application =
+                service.createApplication("A1", candidate, job);
+
+        service.updateApplicationStatus(
+                application,
+                JobApplication.ApplicationStatus.UNDER_REVIEW
+        );
+
+        service.updateApplicationStatus(
+                application,
+                JobApplication.ApplicationStatus.ACCEPTED
+        );
+
+        assertEquals(
+                JobApplication.ApplicationStatus.ACCEPTED,
+                application.getStatus()
+        );
+    }
 }
