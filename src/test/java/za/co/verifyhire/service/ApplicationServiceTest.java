@@ -413,7 +413,9 @@ public class ApplicationServiceTest {
                 JobApplication.ApplicationStatus.REJECTED,
                 application.getStatus()
         );
-    }@Test
+    }
+
+    @Test
     public void shouldUpdateOnlySpecifiedApplicationStatus() {
         ApplicationService service = new ApplicationService();
 
