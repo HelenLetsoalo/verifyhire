@@ -235,4 +235,52 @@ public class ApplicationServiceTest {
 
         assertEquals(0, applications.size());
     }
+
+    @Test
+    public void shouldOnlyFindApplicationsForSpecifiedCandidate() {
+        ApplicationService service = new ApplicationService();
+
+        Candidate candidate1 = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Candidate candidate2 = new Candidate(
+                "C2",
+                "John",
+                "Doe",
+                "john@example.com",
+                "password",
+                "Pretoria"
+        );
+
+        Job job1 = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software.",
+                "Johannesburg",
+                "Java"
+        );
+
+        Job job2 = new Job(
+                "J2",
+                "Python Developer",
+                "Develop Python applications.",
+                "Pretoria",
+                "Python"
+        );
+
+        service.createApplication("A1", candidate1, job1);
+        service.createApplication("A2", candidate2, job2);
+
+        List<JobApplication> applications =
+                service.findApplicationsByCandidate(candidate1);
+
+        assertEquals(1, applications.size());
+        assertEquals("A1", applications.get(0).getApplicationId());
+    }
 }
