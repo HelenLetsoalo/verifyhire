@@ -90,3 +90,11 @@ CREATE TABLE verification_reports (
 
 );
 
+CREATE TABLE appeals (
+    appeal_id VARCHAR(50) PRIMARY KEY ,
+    reason VARCHAR(100) NOT NULL ,
+    status VARCHAR(100) NOT NULL ,
+    application_id VARCHAR(50) NOT NULL ,
+    FOREIGN KEY (application_id) REFERENCES job_applications(application_id)
+);
+
