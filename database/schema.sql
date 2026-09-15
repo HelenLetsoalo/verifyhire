@@ -98,3 +98,12 @@ CREATE TABLE appeals (
     FOREIGN KEY (application_id) REFERENCES job_applications(application_id)
 );
 
+CREATE TABLE job_recruitment (
+    recruitment_id VARCHAR(50) PRIMARY KEY ,
+    organisation_id VARCHAR(50) NOT NULL ,
+    status VARCHAR(50) NOT NULL ,
+    job_id VARCHAR(50) NOT NULL ,
+    FOREIGN KEY (job_id) REFERENCES jobs(job_id),
+    FOREIGN KEY (organisation_id) REFERENCES organisations(organisation_id)
+);
+
