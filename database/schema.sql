@@ -61,3 +61,14 @@ CREATE TABLE jobs (
     FOREIGN KEY (organisation_id) REFERENCES organisations(organisation_id)
 );
 
+CREATE TABLE job_applications (
+    application_id VARCHAR(50) PRIMARY KEY ,
+    application_date DATE NOT NULL ,
+    status VARCHAR(50) NOT NULL ,
+    job_id VARCHAR(50) NOT NULL ,
+    candidate_id VARCHAR(50) NOT NULL ,
+    FOREIGN KEY (job_id) REFERENCES jobs(job_id),
+    FOREIGN KEY (candidate_id) REFERENCES candidates(user_id)
+
+);
+
