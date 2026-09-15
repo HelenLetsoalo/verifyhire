@@ -20,3 +20,14 @@ CREATE TABLE qualifications (
     user_id VARCHAR(50) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES candidates(user_id)
 );
+
+CREATE TABLE work_experience (
+    experience_id VARCHAR(50) PRIMARY KEY ,
+    company_name VARCHAR(100) NOT NULL ,
+    job_title VARCHAR(100) NOT NULL ,
+    start_date DATE NOT NULL ,
+    end_date DATE NOT NULL,
+    user_id VARCHAR(50) NOT NULL ,
+    FOREIGN KEY (user_id) REFERENCES candidates(user_id)
+);
+
