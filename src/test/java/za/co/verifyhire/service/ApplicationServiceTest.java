@@ -283,4 +283,34 @@ public class ApplicationServiceTest {
         assertEquals(1, applications.size());
         assertEquals("A1", applications.get(0).getApplicationId());
     }
+
+    @Test
+    public void shouldCreateApplicationWithPendingStatus() {
+        ApplicationService service = new ApplicationService();
+
+        Candidate candidate = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software.",
+                "Johannesburg",
+                "Java"
+        );
+
+        JobApplication application =
+                service.createApplication("A1", candidate, job);
+
+        assertEquals(
+                JobApplication.ApplicationStatus.PENDING,
+                application.getStatus()
+        );
+    }
 }
