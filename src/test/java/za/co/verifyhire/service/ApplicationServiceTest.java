@@ -413,5 +413,48 @@ public class ApplicationServiceTest {
                 JobApplication.ApplicationStatus.REJECTED,
                 application.getStatus()
         );
+    }@Test
+    public void shouldUpdateOnlySpecifiedApplicationStatus() {
+        ApplicationService service = new ApplicationService();
+
+        Candidate candidate = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software.",
+                "Johannesburg",
+                "Java"
+        );
+
+        JobApplication application1 =
+                service.createApplication("A1", candidate, job);
+
+        JobApplication application2 =
+                service.createApplication("A2", candidate, job);
+
+        service.updateApplicationStatus(
+                application1,
+                JobApplication.ApplicationStatus.ACCEPTED
+        );
+
+        assertEquals(
+                JobApplication.ApplicationStatus.ACCEPTED,
+                application1.getStatus()
+        );
+
+        assertEquals(
+                JobApplication.ApplicationStatus.PENDING,
+                application2.getStatus()
+        );
     }
+
+
 }
