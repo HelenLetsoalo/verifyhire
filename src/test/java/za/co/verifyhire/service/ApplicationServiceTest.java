@@ -537,4 +537,63 @@ public class ApplicationServiceTest {
                 application.getStatus()
         );
     }
+
+    @Test
+    public void shouldFindAllApplicationsForCandidateWithMultipleApplications() {
+        ApplicationService service = new ApplicationService();
+
+        Candidate candidate1 = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Candidate candidate2 = new Candidate(
+                "C2",
+                "John",
+                "Doe",
+                "john@example.com",
+                "password",
+                "Pretoria"
+        );
+
+        Job job1 = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software.",
+                "Johannesburg",
+                "Java"
+        );
+
+        Job job2 = new Job(
+                "J2",
+                "Data Analyst",
+                "Analyse data.",
+                "Johannesburg",
+                "Python"
+        );
+
+        Job job3 = new Job(
+                "J3",
+                "Cloud Engineer",
+                "Work with cloud systems.",
+                "Pretoria",
+                "AWS"
+        );
+
+        service.createApplication("A1", candidate1, job1);
+        service.createApplication("A2", candidate1, job2);
+        service.createApplication("A3", candidate2, job3);
+
+        List<JobApplication> applications =
+                service.findApplicationsByCandidate(candidate1);
+
+        assertEquals(2, applications.size());
+
+        assertEquals("A1", applications.get(0).getApplicationId());
+        assertEquals("A2", applications.get(1).getApplicationId());
+    }
 }
