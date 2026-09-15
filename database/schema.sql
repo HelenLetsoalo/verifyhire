@@ -12,3 +12,11 @@ CREATE TABLE candidates (
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
+CREATE TABLE qualifications (
+    qualification_id VARCHAR(50) PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    institution_name VARCHAR(150) NOT NULL,
+    year_obtained INTEGER NOT NULL,
+    user_id VARCHAR(50) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES candidates(user_id)
+);
