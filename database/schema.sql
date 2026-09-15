@@ -7,3 +7,8 @@ CREATE TABLE users (
     location VARCHAR(150) NOT NULL
 );
 
+CREATE TABLE candidates (
+    user_id VARCHAR(50) PRIMARY KEY,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
