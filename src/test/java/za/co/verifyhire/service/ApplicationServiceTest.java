@@ -2,6 +2,7 @@ package za.co.verifyhire.service;
 
 import org.junit.jupiter.api.Test;
 import java.util.List;
+import java.time.LocalDate;
 
 import za.co.verifyhire.model.Candidate;
 import za.co.verifyhire.model.Job;
@@ -311,6 +312,36 @@ public class ApplicationServiceTest {
         assertEquals(
                 JobApplication.ApplicationStatus.PENDING,
                 application.getStatus()
+        );
+    }
+
+    @Test
+    public void shouldSetApplicationDateWhenApplicationIsCreated() {
+        ApplicationService service = new ApplicationService();
+
+        Candidate candidate = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software.",
+                "Johannesburg",
+                "Java"
+        );
+
+        JobApplication application =
+                service.createApplication("A1", candidate, job);
+
+        assertEquals(
+                LocalDate.now(),
+                application.getApplicationDate()
         );
     }
 }
