@@ -50,3 +50,14 @@ CREATE TABLE organisations (
     phone VARCHAR(20) NOT NULL
 );
 
+CREATE TABLE jobs (
+    job_id VARCHAR(50) PRIMARY KEY ,
+    title VARCHAR(100) NOT NULL ,
+    description VARCHAR(255) NOT NULL ,
+    location VARCHAR(100) NOT NULL ,
+    requirements VARCHAR(255) NOT NULL ,
+    status VARCHAR(100) NOT NULL ,
+    organisation_id VARCHAR(50) NOT NULL ,
+    FOREIGN KEY (organisation_id) REFERENCES organisations(organisation_id)
+);
+
