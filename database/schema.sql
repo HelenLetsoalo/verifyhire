@@ -41,3 +41,12 @@ CREATE TABLE candidate_references (
     FOREIGN KEY (user_id) REFERENCES candidates(user_id)
 );
 
+CREATE TABLE organisations (
+    organisation_id VARCHAR(50) PRIMARY KEY ,
+    name VARCHAR(100) NOT NULL ,
+    location VARCHAR(100) NOT NULL ,
+    email VARCHAR(100) NOT NULL ,
+    services VARCHAR(100) NOT NULL ,
+    phone VARCHAR(20) NOT NULL
+);
+
