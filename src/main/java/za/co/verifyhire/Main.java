@@ -34,6 +34,18 @@ public class Main {
                 job
         );
 
+        System.out.println("Candidate: "
+                + candidate.getFirstName() + " "
+                + candidate.getLastName());
+
+        System.out.println("Job: " + job.getTitle());
+
+        System.out.println("Application ID: "
+                + application.getApplicationId());
+
+        System.out.println("Application Status: "
+                + application.getStatus());
+
     }
 }
 
