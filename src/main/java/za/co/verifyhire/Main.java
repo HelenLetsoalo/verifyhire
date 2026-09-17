@@ -3,6 +3,7 @@ package za.co.verifyhire;
 import za.co.verifyhire.model.Candidate;
 import za.co.verifyhire.model.Job;
 import za.co.verifyhire.model.JobApplication;
+import za.co.verifyhire.model.VerificationReport;
 import za.co.verifyhire.service.ApplicationService;
 
 public class Main {
@@ -53,6 +54,21 @@ public class Main {
 
         System.out.println("Updated Application Status: "
                 + application.getStatus());
+
+        VerificationReport report = new VerificationReport(
+                "R1",
+                application,
+                true,
+                "Candidate information verified successfully."
+        );
+
+        System.out.println("Verification Result: "
+                + report.isVerified());
+
+        System.out.println("Verification Reason: "
+                + report.getReason());
+
+
     }
 
 }
