@@ -68,7 +68,15 @@ public class Main {
         System.out.println("Verification Reason: "
                 + report.getReason());
 
+        if (report.isVerified()) {
+            applicationService.updateApplicationStatus(
+                    application,
+                    JobApplication.ApplicationStatus.ACCEPTED
+            );
 
+            System.out.println("Final Application Status: "
+                    + application.getStatus());
+        }
     }
 
 }
