@@ -77,6 +77,41 @@ public class Main {
             System.out.println("Final Application Status: "
                     + application.getStatus());
         }
+
+        JobApplication secondApplication =
+                applicationService.createApplication(
+                        "A2",
+                        candidate,
+                        job
+                );
+
+        applicationService.updateApplicationStatus(
+                secondApplication,
+                JobApplication.ApplicationStatus.UNDER_REVIEW
+        );
+
+        VerificationReport secondReport = new VerificationReport(
+                "R2",
+                secondApplication,
+                false,
+                "Candidate information could not be verified."
+        );
+
+        System.out.println("Second Application Verification Result: "
+                + secondReport.isVerified());
+
+        System.out.println("Second Application Verification Reason: "
+                + secondReport.getReason());
+
+        if (!secondReport.isVerified()) {
+            applicationService.updateApplicationStatus(
+                    secondApplication,
+                    JobApplication.ApplicationStatus.REJECTED
+            );
+
+            System.out.println("Second Application Final Status: "
+                    + secondApplication.getStatus());
+        }
     }
 
 }
