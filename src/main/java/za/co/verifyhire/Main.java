@@ -46,6 +46,14 @@ public class Main {
         System.out.println("Application Status: "
                 + application.getStatus());
 
+        applicationService.updateApplicationStatus(
+                application,
+                JobApplication.ApplicationStatus.UNDER_REVIEW
+        );
+
+        System.out.println("Updated Application Status: "
+                + application.getStatus());
     }
+
 }
 
