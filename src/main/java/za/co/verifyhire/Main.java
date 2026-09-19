@@ -5,6 +5,7 @@ import za.co.verifyhire.model.Job;
 import za.co.verifyhire.model.JobApplication;
 import za.co.verifyhire.model.VerificationReport;
 import za.co.verifyhire.service.ApplicationService;
+import za.co.verifyhire.model.Appeal;
 
 public class Main {
 
@@ -112,6 +113,24 @@ public class Main {
             System.out.println("Second Application Final Status: "
                     + secondApplication.getStatus());
         }
+
+        System.out.println("Second Application Final Status: "
+                + secondApplication.getStatus());
+
+        Appeal appeal = new Appeal(
+                "AP1",
+                secondApplication,
+                "I believe my application was incorrectly rejected."
+        );
+
+        System.out.println("Appeal ID: "
+                + appeal.getAppealId());
+
+        System.out.println("Appeal Reason: "
+                + appeal.getReason());
+
+        System.out.println("Appeal Status: "
+                + appeal.getStatus());
     }
 
 }

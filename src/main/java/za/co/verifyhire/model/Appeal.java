@@ -35,4 +35,8 @@ public class Appeal {
     public AppealStatus getStatus() {
         return status;
     }
+
+    public void updateStatus(AppealStatus status) {
+        this.status = status;
+    }
 }

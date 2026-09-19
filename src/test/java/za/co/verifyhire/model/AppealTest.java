@@ -57,4 +57,31 @@ public class AppealTest {
     public void shouldHaveAllAppealStatuses() {
         assertEquals(3, Appeal.AppealStatus.values().length);
     }
+
+    @Test
+    public void shouldUpdateAppealStatus() {
+        Appeal appeal = new Appeal(
+                "A1",
+                null,
+                "I believe my qualification was incorrectly rejected."
+        );
+
+        appeal.updateStatus(Appeal.AppealStatus.APPROVED);
+
+        assertEquals(Appeal.AppealStatus.APPROVED, appeal.getStatus());
+    }
+
+    @Test
+    public void shouldRejectAppeal() {
+        Appeal appeal = new Appeal(
+                "A1",
+                null,
+                "I believe my qualification was incorrectly rejected."
+        );
+
+        appeal.updateStatus(Appeal.AppealStatus.REJECTED);
+
+        assertEquals(Appeal.AppealStatus.REJECTED, appeal.getStatus());
+    }
 }
+
