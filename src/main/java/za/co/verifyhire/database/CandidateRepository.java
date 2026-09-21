@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import za.co.verifyhire.model.Candidate;
+
 
 public class CandidateRepository {
 
@@ -68,6 +70,20 @@ public class CandidateRepository {
 
         statement.close();
         connection.close();
+    }
+
+    public void saveCandidate(Candidate candidate) throws Exception {
+
+        createUser(
+                candidate.getUserId(),
+                candidate.getFirstName(),
+                candidate.getLastName(),
+                candidate.getEmail(),
+                candidate.getPassword(),
+                candidate.getLocation()
+        );
+
+        createCandidate(candidate.getUserId());
     }
 
     public void createCandidate(String userId) throws Exception {
