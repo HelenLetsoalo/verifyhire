@@ -596,4 +596,43 @@ public class ApplicationServiceTest {
         assertEquals("A1", applications.get(0).getApplicationId());
         assertEquals("A2", applications.get(1).getApplicationId());
     }
+
+    @Test
+    public void shouldFindApplicationsForCandidateWithSameId() {
+        ApplicationService service = new ApplicationService();
+
+        Candidate originalCandidate = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Candidate sameCandidate = new Candidate(
+                "C1",
+                "Helen",
+                "Letsoalo",
+                "helen@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        Job job = new Job(
+                "J1",
+                "Software Developer",
+                "Develop software.",
+                "Johannesburg",
+                "Java"
+        );
+
+        service.createApplication("A1", originalCandidate, job);
+
+        List<JobApplication> applications =
+                service.findApplicationsByCandidate(sameCandidate);
+
+        assertEquals(1, applications.size());
+        assertEquals("A1", applications.get(0).getApplicationId());
+    }
 }
