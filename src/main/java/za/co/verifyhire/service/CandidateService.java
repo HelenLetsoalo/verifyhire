@@ -11,16 +11,15 @@ public class CandidateService {
     private List<Candidate> candidates;
     private CandidateRepository repository;
 
-    public CandidateService() {
-        this.candidates = new ArrayList<>();
-    }
-
     public CandidateService(CandidateRepository repository) {
+        this.candidates = new ArrayList<>();
         this.repository = repository;
     }
 
-    public void addCandidate(Candidate candidate) {
-        candidates.add(candidate);
+
+
+    public void addCandidate(Candidate candidate) throws Exception{
+        repository.saveCandidate(candidate);
     }
 
     public Candidate findCandidateById(String UserId){
