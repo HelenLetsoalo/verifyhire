@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.postgresql.util.PSQLException;
 
 public class CandidateRepositoryTest {
 
@@ -81,7 +82,7 @@ public class CandidateRepositoryTest {
     public void shouldNotCreateCandidateForMissingUser() throws Exception {
         CandidateRepository repository = new CandidateRepository();
 
-        assertThrows(Exception.class, () -> {
+        PSQLException exception = assertThrows(PSQLException.class, () -> {
             repository.createCandidate("DOES_NOT_EXIST");
         });
     }
