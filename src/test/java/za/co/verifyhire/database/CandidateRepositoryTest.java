@@ -25,6 +25,9 @@ public class CandidateRepositoryTest {
         repository.deleteUser("TEST001");
 
         repository.deleteUser("TEST005");
+
+        repository.deleteCandidate("TEST006");
+        repository.deleteUser("TEST006");
     }
 
     @Test
@@ -130,5 +133,35 @@ public class CandidateRepositoryTest {
         assertEquals("23505", exception.getSQLState());
     }
 
-    
+    @Test
+    public void shouldDeleteCandidate() throws Exception {
+        CandidateRepository repository = new CandidateRepository();
+
+        repository.createUser(
+                "TEST006",
+                "Test",
+                "Candidate Six",
+                "test6@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        repository.createCandidate("TEST006");
+
+        repository.deleteCandidate("TEST006");
+
+        List<String> candidates = repository.findAllCandidates();
+
+        boolean found = false;
+
+        for (String candidate : candidates) {
+            if (candidate.startsWith("TEST006")) {
+                found = true;
+            }
+        }
+
+        assertFalse(found);
+
+        repository.deleteUser("TEST006");
+    }
 }
