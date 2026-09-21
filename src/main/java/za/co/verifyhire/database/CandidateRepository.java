@@ -115,4 +115,24 @@ public class CandidateRepository {
 
         return foundUser;
     }
+
+    public void deleteCandidate(String userId) throws Exception {
+
+        String sql = """
+        DELETE FROM candidates
+        WHERE user_id = ?
+        """;
+
+        Connection connection = DatabaseConnection.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setString(1, userId);
+
+        statement.executeUpdate();
+
+        statement.close();
+        connection.close();
+    }
+
+
 }
