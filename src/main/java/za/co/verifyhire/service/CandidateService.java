@@ -16,21 +16,12 @@ public class CandidateService {
         this.repository = repository;
     }
 
-
-
     public void addCandidate(Candidate candidate) throws Exception{
         repository.saveCandidate(candidate);
     }
 
-    public Candidate findCandidateById(String UserId){
-        for(Candidate candidate : candidates) {
-            if(candidate.getUserId().equals(UserId)){
-                return candidate;
-            }
-        }
-        return null;
+    public Candidate findCandidateById(String userId) throws Exception {
+        return repository.findCandidateById(userId);
     }
-
-
-
+    
 }
