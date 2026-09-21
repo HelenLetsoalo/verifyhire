@@ -1,5 +1,8 @@
 package za.co.verifyhire.model;
 
+import java.util.Objects;
+
+
 public class User{
 
     private String userId;
@@ -39,5 +42,19 @@ public class User{
 
     public String getLocation() {
         return location;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof User)) {
+            return false;
+        }
+
+        User user = (User) o;
+        return Objects.equals(userId, user.userId);
     }
 }
