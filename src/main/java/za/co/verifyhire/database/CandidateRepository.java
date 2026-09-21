@@ -132,6 +132,30 @@ public class CandidateRepository {
         return foundUser;
     }
 
+    public boolean candidateExists(String userId) throws Exception {
+
+        String sql = """
+        SELECT user_id
+        FROM candidates
+        WHERE user_id = ?
+        """;
+
+        Connection connection = DatabaseConnection.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setString(1, userId);
+
+        ResultSet resultSet = statement.executeQuery();
+
+        boolean exists = resultSet.next();
+
+        resultSet.close();
+        statement.close();
+        connection.close();
+
+        return exists;
+    }
+
     public void deleteCandidate(String userId) throws Exception {
 
         String sql = """
@@ -167,4 +191,6 @@ public class CandidateRepository {
         statement.close();
         connection.close();
     }
+
+
 }
