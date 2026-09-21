@@ -23,6 +23,8 @@ public class CandidateRepositoryTest {
         repository.deleteUser("TEST004");
 
         repository.deleteUser("TEST001");
+
+        repository.deleteUser("TEST005");
     }
 
     @Test
@@ -101,4 +103,32 @@ public class CandidateRepositoryTest {
 
         assertEquals("23503", exception.getSQLState());
     }
+    @Test
+    public void shouldNotCreateDuplicateUser() throws Exception {
+        CandidateRepository repository = new CandidateRepository();
+
+        repository.createUser(
+                "TEST005",
+                "Test",
+                "Candidate Five",
+                "test8@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        PSQLException exception = assertThrows(PSQLException.class, () -> {
+            repository.createUser(
+                    "TEST005",
+                    "Another",
+                    "Candidate",
+                    "test9@example.com",
+                    "password",
+                    "Johannesburg"
+            );
+        });
+
+        assertEquals("23505", exception.getSQLState());
+    }
+
+    
 }
