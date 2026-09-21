@@ -23,5 +23,4 @@ public class CandidateService {
     public Candidate findCandidateById(String userId) throws Exception {
         return repository.findCandidateById(userId);
     }
-    
 }
