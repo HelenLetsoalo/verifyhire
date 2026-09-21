@@ -19,6 +19,9 @@ public class CandidateRepositoryTest {
         repository.deleteCandidate("TEST003");
         repository.deleteUser("TEST003");
 
+        repository.deleteCandidate("TEST004");
+        repository.deleteUser("TEST004");
+
         repository.deleteUser("TEST001");
     }
 
@@ -39,8 +42,7 @@ public class CandidateRepositoryTest {
 
         List<String> candidates = repository.findAllCandidates();
 
-        assertFalse(candidates.isEmpty());
-    }
+        assertTrue(candidates.stream().anyMatch(candidate -> candidate.startsWith("TEST004")));    }
 
     @Test
     public void shouldCreateUser() throws Exception {
