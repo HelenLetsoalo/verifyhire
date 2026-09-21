@@ -5,8 +5,19 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
 
 public class CandidateRepositoryTest {
+
+    @AfterEach
+    public void cleanUp() throws Exception {
+        CandidateRepository repository = new CandidateRepository();
+
+        repository.deleteCandidate("TEST003");
+        repository.deleteUser("TEST003");
+
+        repository.deleteUser("TEST001");
+    }
 
     @Test
     public void shouldFindCandidates() throws Exception {
