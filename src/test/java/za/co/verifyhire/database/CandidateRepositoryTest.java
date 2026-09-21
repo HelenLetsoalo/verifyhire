@@ -26,6 +26,17 @@ public class CandidateRepositoryTest {
     public void shouldFindCandidates() throws Exception {
         CandidateRepository repository = new CandidateRepository();
 
+        repository.createUser(
+                "TEST004",
+                "Test",
+                "Candidate Four",
+                "test7@example.com",
+                "password",
+                "Johannesburg"
+        );
+
+        repository.createCandidate("TEST004");
+
         List<String> candidates = repository.findAllCandidates();
 
         assertFalse(candidates.isEmpty());
