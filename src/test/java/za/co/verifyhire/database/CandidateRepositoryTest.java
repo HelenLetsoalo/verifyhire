@@ -77,4 +77,12 @@ public class CandidateRepositoryTest {
         assertNull(user);
     }
 
+    @Test
+    public void shouldNotCreateCandidateForMissingUser() throws Exception {
+        CandidateRepository repository = new CandidateRepository();
+
+        assertThrows(Exception.class, () -> {
+            repository.createCandidate("DOES_NOT_EXIST");
+        });
+    }
 }
