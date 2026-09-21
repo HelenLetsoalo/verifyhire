@@ -192,5 +192,39 @@ public class CandidateRepository {
         connection.close();
     }
 
+    public Candidate findCandidateById(String userId) throws Exception {
 
+        String sql = """
+        SELECT u.user_id, u.first_name, u.last_name, u.email, u.password, u.location
+        FROM users u
+        JOIN candidates c ON u.user_id = c.user_id
+        WHERE u.user_id = ?
+        """;
+
+        Connection connection = DatabaseConnection.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setString(1, userId);
+
+        ResultSet resultSet = statement.executeQuery();
+
+        Candidate candidate = null;
+
+        if (resultSet.next()) {
+            candidate = new Candidate(
+                    resultSet.getString("user_id"),
+                    resultSet.getString("first_name"),
+                    resultSet.getString("last_name"),
+                    resultSet.getString("email"),
+                    resultSet.getString("password"),
+                    resultSet.getString("location")
+            );
+        }
+
+        resultSet.close();
+        statement.close();
+        connection.close();
+
+        return candidate;
+    }
 }
