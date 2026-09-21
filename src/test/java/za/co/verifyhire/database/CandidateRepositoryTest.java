@@ -7,6 +7,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CandidateRepositoryTest {
 
@@ -66,4 +67,14 @@ public class CandidateRepositoryTest {
 
         assertTrue(candidates.stream().anyMatch(candidate -> candidate.startsWith("TEST003")));
     }
+
+    @Test
+    public void shouldReturnNullWhenUserDoesNotExist() throws Exception {
+        CandidateRepository repository = new CandidateRepository();
+
+        String user = repository.findUser("DOES_NOT_EXIST");
+
+        assertNull(user);
+    }
+
 }
