@@ -2,12 +2,15 @@ package za.co.verifyhire.service;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import za.co.verifyhire.database.CandidateRepository;
 import za.co.verifyhire.model.Candidate;
 
 public class CandidateServiceTest {
     @Test
     public void shouldAddCandidate() {
-        CandidateService service = new CandidateService();
+        CandidateRepository repository = new CandidateRepository();
+        CandidateService service = new CandidateService(repository);
 
         Candidate candidate = new Candidate(
                 "C1",
@@ -25,7 +28,8 @@ public class CandidateServiceTest {
 
     @Test
     public void shouldReturnNullWhenCandidateDoesNotExist() {
-        CandidateService service = new CandidateService();
+        CandidateRepository repository = new CandidateRepository();
+        CandidateService service = new CandidateService(repository);
 
         Candidate foundCandidate = service.findCandidateById("C999");
 
@@ -34,7 +38,8 @@ public class CandidateServiceTest {
 
     @Test
     public void shouldFindCorrectCandidateById() {
-        CandidateService service = new CandidateService();
+        CandidateRepository repository = new CandidateRepository();
+        CandidateService service = new CandidateService(repository);
 
         Candidate firstCandidate = new Candidate(
                 "C1",
