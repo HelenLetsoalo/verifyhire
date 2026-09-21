@@ -85,5 +85,7 @@ public class CandidateRepositoryTest {
         PSQLException exception = assertThrows(PSQLException.class, () -> {
             repository.createCandidate("DOES_NOT_EXIST");
         });
+
+        assertEquals("23503", exception.getSQLState());
     }
 }
