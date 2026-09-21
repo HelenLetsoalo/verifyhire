@@ -16,6 +16,8 @@ public class CandidateService {
         this.repository = repository;
     }
 
+
+
     public void addCandidate(Candidate candidate) throws Exception{
         repository.saveCandidate(candidate);
     }
@@ -28,5 +30,7 @@ public class CandidateService {
         }
         return null;
     }
+
+
 
 }
