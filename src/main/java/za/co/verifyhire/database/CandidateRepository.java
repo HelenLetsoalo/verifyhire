@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import za.co.verifyhire.model.Candidate;
+import org.springframework.stereotype.Repository;
 
-
+@Repository
 public class CandidateRepository {
 
     public List<String> findAllCandidates() throws Exception {
