@@ -17,7 +17,7 @@ public class CandidateController {
     }
 
     @GetMapping("/candidates/{userId}")
-    public CandidateResponse getCandidate(@PathVariable String userId)
+    public CandidateResponse getCandidate(@PathVariable ("userId")String userId)
             throws Exception {
 
         Candidate candidate =
