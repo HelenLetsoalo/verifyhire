@@ -71,6 +71,7 @@ public class User{
     public void setLocation(String location) {
         this.location = location;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
