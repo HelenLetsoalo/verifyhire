@@ -1,3 +1,4 @@
+
 package za.co.verifyhire.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import za.co.verifyhire.database.CandidateRepository;
 import za.co.verifyhire.model.Candidate;
 import za.co.verifyhire.dto.CandidateResponse;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 public class CandidateController {
@@ -17,8 +20,8 @@ public class CandidateController {
     }
 
     @GetMapping("/candidates/{userId}")
-    public CandidateResponse getCandidate(@PathVariable ("userId")String userId)
-            throws Exception {
+    public CandidateResponse getCandidate(
+            @PathVariable("userId") String userId) throws Exception {
 
         Candidate candidate =
                 candidateRepository.findCandidateById(userId);
@@ -34,5 +37,14 @@ public class CandidateController {
                 candidate.getEmail(),
                 candidate.getLocation()
         );
+    }
+
+    @PostMapping("/candidates")
+    public String createCandidate(@RequestBody Candidate candidate)
+            throws Exception {
+
+        candidateRepository.saveCandidate(candidate);
+
+        return "Candidate created successfully";
     }
 }
