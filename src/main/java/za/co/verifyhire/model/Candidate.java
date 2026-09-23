@@ -9,6 +9,13 @@ public class Candidate extends User{
     private List<WorkExperience> experiences;
     private List<Reference> references;
 
+    public Candidate() {
+        super();
+        this.qualifications = new ArrayList<>();
+        this.experiences = new ArrayList<>();
+        this.references = new ArrayList<>();
+    }
+
     public Candidate(String userId, String firstName, String lastName, String email,String password,String location) {
         super(userId, firstName, lastName,email,password,location);
         this.qualifications = new ArrayList<>();
