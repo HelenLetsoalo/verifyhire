@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import za.co.verifyhire.database.CandidateRepository;
 import za.co.verifyhire.model.Candidate;
+import za.co.verifyhire.dto.CandidateResponse;
 
 @RestController
 public class CandidateController {
@@ -16,7 +17,22 @@ public class CandidateController {
     }
 
     @GetMapping("/candidates/{userId}")
-    public Candidate getCandidate(@PathVariable("userId") String userId) throws Exception {
-        return candidateRepository.findCandidateById(userId);
+    public CandidateResponse getCandidate(@PathVariable String userId)
+            throws Exception {
+
+        Candidate candidate =
+                candidateRepository.findCandidateById(userId);
+
+        if (candidate == null) {
+            return null;
+        }
+
+        return new CandidateResponse(
+                candidate.getUserId(),
+                candidate.getFirstName(),
+                candidate.getLastName(),
+                candidate.getEmail(),
+                candidate.getLocation()
+        );
     }
 }
