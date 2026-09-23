@@ -16,7 +16,7 @@ public class CandidateController {
     }
 
     @GetMapping("/candidates/{userId}")
-    public Candidate getCandidate(@PathVariable String userId) throws Exception {
+    public Candidate getCandidate(@PathVariable("userId") String userId) throws Exception {
         return candidateRepository.findCandidateById(userId);
     }
 }
