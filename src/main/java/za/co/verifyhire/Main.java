@@ -110,8 +110,7 @@ public class Main {
                     JobApplication.ApplicationStatus.REJECTED
             );
 
-            System.out.println("Second Application Final Status: "
-                    + secondApplication.getStatus());
+
         }
 
         System.out.println("Second Application Final Status: "
