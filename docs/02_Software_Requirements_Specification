@@ -1,0 +1,124 @@
+# 2. Software Requirements Specification
+
+## 2.1 Functional Requirements
+
+### FR1 — Candidate Management
+
+The system shall allow candidate information to be created and retrieved.
+
+Candidate information includes:
+
+- User ID
+- First name
+- Last name
+- Email
+- Password
+- Location
+
+### FR2 — Qualifications
+
+The system shall support qualifications associated with candidates.
+
+A qualification contains:
+
+- Qualification ID
+- Qualification name
+- Institution
+- Year obtained
+- Candidate ID
+
+### FR3 — Work Experience
+
+The system shall support work experience associated with candidates.
+
+### FR4 — References
+
+The system shall support candidate references.
+
+### FR5 — Organisations
+
+The system shall support organisations that create or own job opportunities.
+
+### FR6 — Jobs
+
+The system shall support jobs containing:
+
+- Job ID
+- Title
+- Description
+- Location
+- Requirements
+- Status
+- Organisation
+
+### FR7 — Applications
+
+The system shall support applications connecting candidates to jobs.
+
+Application statuses include:
+
+- PENDING
+- UNDER_REVIEW
+- ACCEPTED
+- REJECTED
+
+### FR8 — Verification
+
+The system shall evaluate candidate information through the verification workflow and produce a verification result and reason.
+
+### FR9 — Appeals
+
+The system shall allow an application that has been rejected to have an associated appeal.
+
+### FR10 — REST API
+
+The system shall expose REST endpoints for supported application operations.
+
+Current API endpoints include:
+
+- `GET /health`
+- `GET /candidates/{userId}`
+- `POST /candidates`
+
+## 2.2 Non-Functional Requirements
+
+### Performance
+
+The application should respond to normal API requests within a reasonable time under expected prototype usage.
+
+### Security
+
+- Database credentials must not be hard-coded for deployment.
+- Passwords and secrets must be supplied through environment variables.
+- Database access should be restricted through appropriate network rules in cloud deployment.
+
+### Maintainability
+
+The project should use separate model, service, repository, controller, and DTO responsibilities where appropriate.
+
+### Reliability
+
+Automated tests should be maintained as the application evolves.
+
+### Portability
+
+The application should be runnable locally and inside a Docker container.
+
+## 2.3 Constraints
+
+- The project is an educational prototype.
+- External verification providers are not currently integrated.
+- Production-grade authentication and authorisation are future work.
+- The cloud architecture is being introduced incrementally.
+
+## 2.4 Acceptance Criteria
+
+The prototype will be considered successful when:
+
+1. The project builds successfully with Maven.
+2. Automated tests pass.
+3. PostgreSQL connectivity works.
+4. The Spring Boot application starts successfully.
+5. Candidate API endpoints return expected responses.
+6. The application can run inside Docker.
+7. The cloud deployment can connect securely to its cloud PostgreSQL database.
